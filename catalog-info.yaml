@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mar11-testragnew-1-gitops
+  description: This is GitOps manifest for mar11-testragnew-1   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=mar11-testragnew-1
+    janus-idp.io/tekton: mar11-testragnew-1 
+    backstage.io/kubernetes-id: mar11-testragnew-1 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mar11-testragnew-1  
